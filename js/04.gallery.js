@@ -64,40 +64,51 @@ var products = [
 ];
 
 
-/* 
-수업 내용 복습 및 응용
-- 설계
-1. jQuery를 이용해서 li 만듬
-2. Modal 창 open,close 
-*/
+// console.log( products );
+// console.log( products[1] );
+// console.log( products[1].name );
+// console.log( products[1].src );
+// console.log( products[1].price );
+
+// JAVA - Jackson/Gson
+var json = JSON.stringify(products); // js Object -> json
+var jsObj = JSON.parse(json); // json -> js Object
+// console.log( json );
+// console.log( jsObj );
 
 (function init() {
-	var cnt = products.length;
+	var cnt = products.length; // 12
 	var html = '';
 	var wrap = document.getElementsByClassName('prd-wrap')[0];
-	for (var i=0; i<cnt;i++) {
-		html = '<li class="prd">';
+	for(var i=0; i<cnt; i++) {
+		html  = '<li class="prd">';
 		html += '<div class="imgs">';
-		html += '<img src="'+products[i].src+'" class="w100" onclick="openModal('+i+')";';
+		html += '<img src="'+products[i].src+'" class="w100" onclick="openModal('+i+');">';
 		html += '</div>';
 		html += '<div class="conts">';
-		html += 	'<h2 class="name">'+products[i].name+'</h2>';
-		html += 	'<p class="content">'+products[i].content+'</p>';
-		html += 	'<div class="price">'+products[i].price+'</div>';
+		html += '<h2 class="name">'+products[i].name+'</h2>';
+		html += '<p class="content">'+products[i].content+'</p>';
+		html += '<div class="price">$'+products[i].price+'</div>';
 		html += '</div>';
 		html += '</li>';
+		// console.log(html);
 		wrap.innerHTML += html;
 	}
-})();
+})(); // IIFE(즉시실행함수)
 
 function openModal(id) {
-var modal = document.getElementsByClassName('modal-wrapper')[0];
-var imgs = document.getElementsByClassName('imgs')[0];
-imgs.src =products[id].src;
-modal.style.display = 'flex';
-};
+    // 1. 모달창을 열고
+    // 2. 이미지를 바꿔준다.
+    var modal = document.getElementsByClassName('modal-wrapper')[0];
+    var img = modal.getElementsByTagName('img')[0];
+    img.src = products[id].src;
+    modal.style.display = 'flex';
+    
+}
+
 
 function closeModal() {
-	var modal = document.getElementsByClassName('modal-wrapper')[0];
-	modal.style.display = 'none'
+		var modal = document.getElementsByClassName('modal-wrapper')[0];
+    modal.style.display = 'none';
+    // 3. bt-close를 클릭하면 모달창을 닫는다.
 }
