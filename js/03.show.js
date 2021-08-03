@@ -50,26 +50,26 @@ $('.header-wrapper .navi').on('mouseleave', function() {
 // console.log( document.getElementById('h1').innerHTML += "마바사아" );
 
 $('.bt7').click(function() {
-	//$('.box2').stop().animate(json형태의css, [ms시간(400), ('swing'(Def), 'linear'), fn(){}]);
-	$('.box2').stop().animate({"left": "1000px"}, 2000, "swing");
-	$('.box3').stop().animate({"left": "1000px"}, 2000, "linear", function() {
-		console.log('Ani end')
+	//$('.box2').stop().animate(json형태의css, [ms시간(400), ('swing'(Def), 'linear'), fn(){} ] );
+	$('.box2').stop().animate({"left":"1000px"}, 2000, "swing");
+	$('.box3').stop().animate({"left":"1000px"}, 2000, "linear", function() {
+		alert('ani end')
 	});
 });
 
 $('.bt8').click(function() {
-	$('.box4').stop().animate({ 
-		"width": "500px", 
-		"height": "500px", 
-		"opacity": .5,
-		"left": "400px",
-		"borderWidth": "30px",
-	}, 2000);
-});
+	$('.box4').stop().animate( {
+		"width":"500px", 
+		"height":"500px", 
+		"opacity":.5,
+		"left":"400px",
+		"borderWidth":"30px"
+	}, 2000 );
+})
 // https://www.w3schools.com/jquery/eff_animate.asp
 
 $('.bt9').click(function() {
-	$('.box5').addClass('active');
+	$('box5').addClass('active');
 })
 
 
