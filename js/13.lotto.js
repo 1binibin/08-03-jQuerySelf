@@ -3,13 +3,14 @@
 function choiceLotto() {
 	var numbers = [];
 	var lotto = new Array();
-	
 	for(var i=0;i<=45;i++) numbers.push(i);
-	while(lotto.length < 6){
-	var idx = random(0,45);
-	if (lotto.indexOf(numbers[idx]) === -1) lotto.push(numbers[idx]);
+	console.log(numbers);
+	while(lotto.length < 6) {
+		var idx = random(0,45) ;
+		if(lotto.indexOf(numbers[idx])===-1) lotto.push(numbers[idx]);
 	}
-	lotto.sort(function(a, b) { return a - b});
+	//로또라는 배열은 비어있고 indexOf 를 사용해서 값이 없다면 넣어라
+	lotto.sort(function(a, b) {return a - b});
 	setHtml(lotto);
 }
 
@@ -35,9 +36,3 @@ function getLottoColor(n) {
 	else color = 'green';
 	return color;
 }
-/*
-1. for문 45개가 될때 까지 돌린다.
-2. numbers에 push 함
-3. lotto의 배열 갯수가 6개 될때까지 while
-4.
-*/
