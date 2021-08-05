@@ -7,7 +7,7 @@ function choiceLotto() {
 	console.log(numbers);
 	while(lotto.length < 6) {
 		var idx = random(0,45) ;
-		if(lotto.indexOf(numbers[idx])===-1) lotto.push(numbers[idx]);
+		if(lotto.indexOf(numbers[idx]) === -1) lotto.push(numbers[idx]);
 	}
 	//로또라는 배열은 비어있고 indexOf 를 사용해서 값이 없다면 넣어라
 	lotto.sort(function(a, b) {return a - b});
