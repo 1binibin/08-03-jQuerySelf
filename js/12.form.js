@@ -8,7 +8,7 @@ var scores = [
 /*************** Function init ****************/
 function init() {
 	//for(var i=0; i<scores.length; i++) {createRow(scores[i]);}
-	for(var i=0 in scores) { 	createRow(scores[i]) };
+	for(var i=0 in scores) { createRow(scores[i]) };
 	//for(var v of scores) { createRow(v)} //IE11 미지원
 	//scores.forEach(function(v, i) { createRow(v)})
 }

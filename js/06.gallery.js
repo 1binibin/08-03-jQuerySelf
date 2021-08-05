@@ -8,32 +8,29 @@ var foods = [
 	{ name: 'Croissant', src: '../img/f7.jpg' }
 ];
 
-for(var i=0, html; i<foods.length; i++) {
-	html  = '<li class="list">';
-	html += '<img src="'+foods[i].src+'" class="w100 thumb" alt="'+foods[i].name+'">';
+for(var i=0; i<foods.length;i++ ) {
+	html = '<li class="list">';
+	html += '<img src="'+foods[i].src+'" alt="'+foods[i].name+'" class="w100 thumb">';
 	html += '</li>';
 	$('.list-wrap').append(html);
 }
-/*
- * 1차 버전
+/* //1차버전
 $('.list-wrap .thumb').click(function() {
-	console.log( $(this).parent() ); // this의 부모
-	console.log( $(this).parents() ); // this의 모든 조상(배열)
 	$('.stage-wrap .big').attr('src', $(this).attr('src'));
 	$('.stage-wrap .name').html($(this).attr('alt'));
-	$('.list-wrap .list').removeClass('active');
+	$('.list').removeClass('active');
 	$(this).parent().addClass('active');
-});
-*/
+}) */
 
-// 2차 버전
-$('.list-wrap .thumb').click(function() {
+//2차버전  대상을 appenTo 해서 뒤로 오게끔하고(position:absolute, z-index:2)적용 됨, 떠오른뒤 기존 사진 hide()실행
+// 먼저 사진의 src를 뒤에 붙인 src로 바꾸어준다. 그리고 this삭제
+$('.list-wrawp .thumb').click(function () {
 	var html = '<div class="hover"><img src="'+$(this).attr('src')+'" class="w100"></div>';
-	$('.stage-wrap').append(html);
-	$('.stage-wrap .hover').stop().hide().fadeIn(1000,function() {
-        $('.stage-wrap .big').attr('src', $(this).find('img').attr('src') )
-        $(this).remove();
-    });
+	$(html).appendTo('.stage-wrap').stop().hide().fadeIn(1000, function () {
+		$('.stage-wrap .big').attr('src',$(this).find('img').attr('src'))
+		(this).remove();
+		
+	})
 	$('.stage-wrap .name').html($(this).attr('alt'));
 	$('.list-wrap .list').removeClass('active');
 	$(this).parent().addClass('active');

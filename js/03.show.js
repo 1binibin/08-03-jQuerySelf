@@ -1,3 +1,9 @@
+//Animate를 연습해보자
+(function() {
+	alert('Animate를 연습해보자!')
+})();
+
+
 // 사라져 버튼
 $('.bt1').click(function () {
 	$('.box').hide(250);
@@ -109,4 +115,13 @@ $('.bt8').click(function() {
 				});
 		})
 	} )
+});
+
+//bt9 호버시 2배로
+$('.box4').on('mouseenter', function () {
+	$(this).animate({"width":"500px","height":"500px"}, 1000, function() {
+		$(this).on('mouseleave', function() {
+			$(this).animate({"width":"100px","height":"100px"})
+		})
+	})
 });

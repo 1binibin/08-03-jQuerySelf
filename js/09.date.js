@@ -15,28 +15,25 @@ var interval;
 
 
 /************** 이벤트 콜백 *****************/
-function createBox(el) {
-    var r = random(0,256); // Math.floor(Math.random()*256);
+function createBox(v) {
+    var r = random(0,256);
     var g = random(0,256);
     var b = random(0,256);
-    var style = 'background-color: rgba('+r+', '+g+', '+b+');'
-    var html = '<div class="box" style="'+style+'"></div>'
-    $(html).appendTo(el);
-}
-
+    var style = 'bakcground-color:rgb('+r+', '+g+', '+b+')';
+    var box = '<div class="box" style="'+style+'"></div>';
+    $(box).appendTo(v);
+};
 
 function onBtShow() {
     clearInterval(interval);
-    interval = setInterval(createBox,300,'.stage');
+    interval = setInterval(createBox, 500, '.stage');
 }
 
 function onBtHide() {
     clearInterval(interval);
     $('.stage').empty();
 }
-
-
 /************** 이벤트 등록 *****************/
-setTimeout(createBox, 1000, '.stage'); // 1번만 실행
+setTimeout(createBox, 500, '.stage');
 $('.bt-show').click(onBtShow);
 $('.bt-hide').click(onBtHide);
