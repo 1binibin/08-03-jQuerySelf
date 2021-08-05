@@ -4,15 +4,16 @@ function choiceLotto() {
 	var numbers = [];
 	var lotto = new Array();
 	
-	for(var i=1; i<=45; i++) numbers.push(i);
-	// for(; lotto.length < 6;) {
-	while(lotto.length < 6) {
-		var idx = random(0, 45); // Math.floor(Math.random * 45) + 0;
-		if( lotto.indexOf(numbers[idx]) === -1 ) lotto.push(numbers[idx]);
-	} // while(조건) {  조건이 참일때까지 반복, 반복회수 제한이 애매할때 }
-	lotto.sort(function(a, b) {return a - b}); // 오름차순 정렬
+	for(var i=0;i<=45;i++) numbers.push(i);
+	while(lotto.length < 6){
+	var idx = random(0,45);
+	if (lotto.indexOf(numbers[idx]) === -1) lotto.push(numbers[idx]);
+	}
+	lotto.sort(function(a, b) { return a - b});
 	setHtml(lotto);
 }
+
+
 
 function setHtml(lotto) {
 	var lottoEl = document.getElementById('lotto');
@@ -34,4 +35,9 @@ function getLottoColor(n) {
 	else color = 'green';
 	return color;
 }
-
+/*
+1. for문 45개가 될때 까지 돌린다.
+2. numbers에 push 함
+3. lotto의 배열 갯수가 6개 될때까지 while
+4.
+*/
