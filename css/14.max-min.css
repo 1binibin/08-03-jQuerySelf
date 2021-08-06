@@ -1,0 +1,9 @@
+.yellow {background-color: #b18305;}
+.blue {background-color: #093f7c;}
+.red {background-color: #a01309;}
+.black {background-color: #585858;}
+.green {background-color: #08631f;}
+.ball {width: 36px; height: 36px; margin: 2px; color: #fff; border-radius: 50%; line-height: 35px; text-align: center; font-weight: bold;}
+
+#lotto {width: 250px; height: 50px; display: flex; padding: 5px;}
+#history {width: 500px; padding: 5px;}
