@@ -1,6 +1,6 @@
 
 /**************** 로또 프로그램 *****************/
-function choiceLotto() {
+/* function choiceLotto() {
 	var lotto =[];
 	for(var i=1; i<=45;i++){}
 	while(lotto.length < 6){
@@ -9,6 +9,23 @@ function choiceLotto() {
 	}
 	lotto.sort(function(a, b) {return a - b});
 	setHtml(lotto)
+	}*/
+
+
+function choiceLotto() {
+	var lotto =[];
+	for(var i=1; i<=45;i++){}
+	while(lotto.length < 6){
+		var a = random(1,45);
+		if(lotto.indexOf( lotto[a] ) === -1 ) lotto.push(a);
+	}
+	lotto.sort(function(a, b) {return a - b});
+}
+
+function getRandom(lotto) {
+	var max = Math.max();
+	var num = random(0,44) +1;
+	console.log(num);
 }
 
 
@@ -23,14 +40,3 @@ function setHtml(lotto) {
 		lottoEl.innerHTML += '<li class="ball '+getLottoColor(lotto[i])+'">'+lotto[i]+'</li>';
 	}
 }
-
-function getLottoColor(n) {
-	var color = '';
-	if(n <= 10) color = 'yellow';
-	else if(n <= 20) color = 'blue';
-	else if(n <= 30) color = 'red';
-	else if(n <= 40) color = 'black';
-	else color = 'green';
-	return color;
-}
-
