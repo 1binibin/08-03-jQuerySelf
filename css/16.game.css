@@ -9,7 +9,7 @@ form[name="initForm"] .bt-start {display: none;}
 form[name="initForm"] .bt-reset {display: none;}
 
 .stage-wrap {position: relative;}
-.stage-wrap::after {position: absolute; content: ''; display: block; width: 0; height: calc(100% - 1em);}
+.stage-wrap::after {position: absolute; content: ''; display: block; width: 0; height: calc(100% - 1em); border-right: 1px dashed #dedede; top: .5em; right: 100px;}
 .stage-wrap .member-wp {width: 80px; margin-bottom: 2em; position: relative;}
 .stage-wrap .member-wp .imgs {
     

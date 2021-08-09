@@ -62,7 +62,10 @@ function onInit() {
 }
 
 function onStart() {
-    
+    $('.bt-start').attr('disabled',true)
+    $('.bt-reset').attr('disabled',true)
+    var target = $('.stage-wrap').innerWidth();
+    $('.member-wp').stop().animate( {"left":"95%"}, 2000 )
 }
 
 function onReset() {
