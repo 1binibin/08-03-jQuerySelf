@@ -9,8 +9,8 @@ form[name="initForm"] .bt-reset {display: none;}
 
 .stage-wrap {position: relative;}
 .stage-wrap::after {position: absolute; content: ''; display: block; width: 0; height: calc(100% - 1em);}
-.stage-wrap .member-wrap {width: 80px; margin-bottom: 2em; position: relative;}
-.stage-wrap .member-wrap .imgs {
+.stage-wrap .member-wp {width: 80px; margin-bottom: 2em; position: relative;}
+.stage-wrap .member-wp .imgs {
     
     animation-name: ani-member;
     animation-duration: .5s;
@@ -25,3 +25,4 @@ form[name="initForm"] .bt-reset {display: none;}
     from {transform: rotate(-15deg)}
     to {transform: rotate(15deg);}
 }
+.stage-wrap .member-wp input[name="member"] {margin-top: 1em; text-align: center;}
