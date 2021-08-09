@@ -35,13 +35,49 @@
 
 
 /*************** user function *****************/
+function addMember(selector, n) {
+    for(var i =0, html; i < n; i++) {
+        html = '<div class="member-wp">';
+        html += '<div class="imgs">';
+        html += '<img src="../img/marathon.png" class="w100">';
+        html += '</div>';
+        html += '<input type="text" name="member" class="form-control" >';
+        html += '</div>';
+        $(selector).append(html);
+    }
+}
 
+function removeEl(selector, empty) {
+    if(empty) $(selector).empty();
+    else $(selector).remove();
+}
 
 /*************** event callback *****************/
+function onInit() {
+    $('.bt-init').hide();
+    $('.bt-start').show();
+    $('.bt-reset').show();
+    $('#cnt').attr('readonly', true);
+    addMember( '.stage-wrap', $('#cnt').val() );
+}
 
+function onStart() {
+    
+}
+
+function onReset() {
+    $('.bt-init').show();
+    $('.bt-start').hide();
+    $('.bt-reset').hide();
+    $('#cnt').val(4).focus().attr('readonly', false);
+    // removeEl('.stage-wrawp',true);
+    removeEl('.member-wp');
+}
 
 /*************** event init *****************/
-
+$('.bt-init').click(onInit);
+$('.bt-start').click(onStart);
+$('.bt-reset').click(onReset);
 
 /*************** start init *****************/
 
