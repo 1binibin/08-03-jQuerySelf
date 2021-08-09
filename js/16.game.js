@@ -52,6 +52,10 @@ function removeEl(selector, empty) {
     else $(selector).remove();
 }
 
+function getTarget() {
+    return ( $('.stage-wrap').outerWidth() - $('.member-wp').outerWidth() - 10 ) + 'px';
+}
+
 /*************** event callback *****************/
 function onInit() {
     $('.bt-init').hide();
@@ -64,8 +68,14 @@ function onInit() {
 function onStart() {
     $('.bt-start').attr('disabled',true)
     $('.bt-reset').attr('disabled',true)
-    var target = $('.stage-wrap').innerWidth();
-    $('.member-wp').stop().animate( {"left":"95%"}, 2000 )
+    // $('.member-wp').stop().animate( {'left':getTarget()},2000 )
+    $('.member-wp').each(function() {
+        var speed =  random(1500,500);
+        $(this).stop().animate( { 'left':getTarget() }, speed, function() {
+            console.log('Animation 끝!');
+        });
+        console.log('each끝!')
+    })
 }
 
 function onReset() {
