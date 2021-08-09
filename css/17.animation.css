@@ -1,0 +1,56 @@
+.container {display: flex; justify-content: space-between; margin: 100px auto;}
+.box {width: 150px; height: 150px; background-color: red;}
+.box {
+	animation-name: ani-box1;						/* keyframse 지정 */
+	animation-duration: 2s;							/* 속도 */
+	animation-fill-mode: forwards;			/* backwards */
+	animation-iteration-count: 1;
+	animation-direction: alternate;			/* alternate: 최소 반복 2번! */
+	animation-delay: .5s;
+	animation-play-state: running;			/* running, paused */
+	/* animation-timing-function: ease-in-out;		ease, ease-in, ease-out, ease-in-out */
+}
+.box1 {animation-timing-function: ease;}
+.box2 {animation-timing-function: ease-in;}
+.box3 {animation-timing-function: ease-out;}
+.box4 {animation-timing-function: ease-in-out;}
+.box5 {animation-timing-function: linear; animation-name: ani-box5; animation-iteration-count: infinite; animation-duration: 1s; animation-duration: normal;}
+/* .box5 {animation-timing-function: cubic-bezier(1, 0, 0, 1);}  linear: 안쓰겠다!  */
+
+/* .box2 {
+	animation-name: ani-box2;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+	animation-play-state: paused;
+} */
+
+/* 
+.box1 {animation-delay: 0;}
+.box2 {animation-delay: .2s;}
+.box3 {animation-delay: .4s;}
+.box4 {animation-delay: .6s;}
+.box5 {animation-delay: .8s;} 
+*/
+
+@keyframes ani-box1 {
+	from {transform: translateY(0);}
+	to {transform: translateY(500px);}
+}
+
+@keyframes ani-box2 {
+	0% {transform: translate(0, 0) rotate(0); background-color: red;}
+	15% {transform: translate(0, 200px) rotate(360deg); background-color: orange;}
+	30% {transform: translate(300px, 200px) rotate(0); scale:(1.5);}
+	45% {transform: translate(300px, 400px) rotate(360deg); background-color: orange;}
+	60% {transform: translate(0, 300px) rotate(-360deg); background-color: green;}
+	75% {transform: translate(0, 500px) rotate(-720deg); background-color: blue;}
+	90% {transform: translate(0, 0) rotate(0); background-color: purple;}
+	100% {background-color: red;}
+}
+
+@keyframes ani-box5 {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(360deg);}
+}
